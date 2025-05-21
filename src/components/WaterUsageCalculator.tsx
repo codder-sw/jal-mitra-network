@@ -111,7 +111,7 @@ const WaterUsageCalculator: React.FC = () => {
             </div>
             
             <div className="h-[300px] w-full">
-              <ChartContainer className="h-[300px]">
+              <ChartContainer config={chartConfig} className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={usageData.map(item => ({
@@ -136,7 +136,7 @@ const WaterUsageCalculator: React.FC = () => {
             </div>
             
             <div className="h-[300px] w-full">
-              <ChartContainer className="h-[300px]">
+              <ChartContainer config={chartConfig} className="h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie
