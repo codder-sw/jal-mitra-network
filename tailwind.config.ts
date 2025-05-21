@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for water conservation theme
+				water: {
+					light: '#E3F2FD',
+					DEFAULT: '#2196F3',
+					dark: '#0D47A1'
+				},
+				soil: {
+					light: '#F9FBE7',
+					DEFAULT: '#8BC34A',
+					dark: '#33691E'
+				},
+				earth: {
+					DEFAULT: '#795548',
+					light: '#EFEBE9'
 				}
 			},
 			borderRadius: {
@@ -84,11 +100,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'flow': {
+					'0%, 100%': { transform: 'translateX(0) translateY(0)' },
+					'50%': { transform: 'translateX(-5px) translateY(5px)' }
+				},
+				'droplet': {
+					'0%': { opacity: '0', transform: 'translateY(-10px)' },
+					'50%': { opacity: '1' },
+					'100%': { opacity: '0', transform: 'translateY(10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'flow': 'flow 3s ease-in-out infinite',
+				'droplet': 'droplet 2s ease-in-out infinite'
+			},
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
 			}
 		}
 	},
