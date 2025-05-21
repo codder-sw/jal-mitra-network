@@ -16,7 +16,7 @@ const ThemeContext = createContext<ThemeContextType>({
 export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>('light');
 
-  // Initialize theme from localStorage if available
+  // Initialize theme from localStorage if available or system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
@@ -26,7 +26,7 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
     }
   }, []);
 
-  // Update document when theme changes
+  // Update document and localStorage when theme changes
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove('light', 'dark');
@@ -35,7 +35,8 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+    console.log('Theme toggled to:', theme === 'light' ? 'dark' : 'light');
   };
 
   return (

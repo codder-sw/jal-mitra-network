@@ -13,6 +13,7 @@ import WaterQuality from "./pages/WaterQuality";
 import Agriculture from "./pages/Agriculture";
 import Education from "./pages/Education";
 import Community from "./pages/Community";
+import WaterUsageCalculator from "./pages/WaterUsageCalculator";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
                   <Route path="/agriculture" element={<Agriculture />} />
                   <Route path="/education" element={<Education />} />
                   <Route path="/community" element={<Community />} />
+                  <Route path="/calculator" element={<WaterUsageCalculator />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
