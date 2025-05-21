@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Database, Tree, Users, Earth } from 'lucide-react';
+import { Database, Trees, Users, Earth } from 'lucide-react';
 
 const ImpactFeatures: React.FC = () => {
   const { t } = useLanguage();
@@ -14,7 +14,7 @@ const ImpactFeatures: React.FC = () => {
       description: t('home.features.tracking.desc'),
     },
     {
-      icon: <Tree className="h-6 w-6" />,
+      icon: <Trees className="h-6 w-6" />,
       title: t('home.features.agriculture'),
       description: t('home.features.agriculture.desc'),
     },
